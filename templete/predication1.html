@@ -1,0 +1,337 @@
+{%  load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: rgb(235, 228, 228);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #c0e2c3;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #a6d3b1;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body><br>
+    <h1 style="color:black ;text-align:center;"> Predication</h1>
+<br>
+
+<div class="container">
+  <form method='POST'>
+    {% csrf_token %}
+    <div class="row">
+            <div class="col-25">
+              <label for="Name">Name of Model</label>
+            </div>
+            <div class="col-75">
+              <select id="Name" name="Name">
+                <option value="Toyota Innova Crysta Touring Sport 2.4 MT">Toyota Innova Crysta Touring Sport 2.4 MT</option>
+                <option value="Toyota Etios Cross 1.4L VD">Toyota Etios Cross 1.4L VD</option>
+                <option value="Skoda Rapid 1.6 MPI AT Style">Skoda Rapid 1.6 MPI AT Style</option>
+                <option value="BMW 5 Series 520d Luxury Line">BMW 5 Series 520d Luxury Line</option>
+                <option value="Skoda Rapid 1.6 MPI Ambition">Skoda Rapid 1.6 MPI Ambition</option>
+                <option value="Maruti Vitara Brezza ZDi">Maruti Vitara Brezza ZDi</option>
+                <option value="Toyota Etios Liva 1.4 VXD">Toyota Etios Liva 1.4 VXD</option>
+                <option value="Maruti Celerio X VXI Option">Maruti Celerio X VXI Option</option>
+                <option value="Volkswagen Ameo 1.5 TDI Comfortline">Volkswagen Ameo 1.5 TDI Comfortline</option>
+                <option value="Tata Tiago AMT 1.2 Revotron XTA">Tata Tiago AMT 1.2 Revotron XTA</option>
+                <option value="Hyundai Xcent 1.2 VTVT E">Hyundai Xcent 1.2 VTVT E</option>
+                <option value="Toyota Camry Hybrid 2.5">Toyota Camry Hybrid 2.5</option>
+                <option value="Maruti Baleno Alpha">Maruti Baleno Alpha</option>
+                <option value="Honda BRV i-DTEC V MT">Honda BRV i-DTEC V MT</option>
+                <option value="Audi Q3 30 TDI Premium FWD">Audi Q3 30 TDI Premium FWD</option>
+                <option value="Datsun GO T Petrol">Datsun GO T Petrol</option>
+                <option value="Maruti Ignis 1.2 Alpha">Maruti Ignis 1.2 Alpha</option>
+                <option value="Jaguar XE 2.0L Diesel Prestige">Jaguar XE 2.0L Diesel Prestige</option>
+                <option value="Maruti Wagon R LXI">Maruti Wagon R LXI</option>
+                <option value="Ford EcoSport 1.5 Diesel Titanium">Ford EcoSport 1.5 Diesel Titanium</option>
+                <option value="Hyundai Creta 1.6 SX Automatic">Hyundai Creta 1.6 SX Automatic</option>
+                <option value="Volkswagen Vento 1.5 TDI Highline">Volkswagen Vento 1.5 TDI Highline</option>
+                <option value="Maruti Alto LXI">Maruti Alto LXI</option>
+                <option value="BMW 7 Series 730Ld DPE Signature">BMW 7 Series 730Ld DPE Signature</option>
+                <option value="Maruti Dzire ZDI">Maruti Dzire ZDI</option>
+                <option value="BMW 3 Series Luxury Line">BMW 3 Series Luxury Line</option>
+                <option value="Mitsubishi Pajero Sport 4X4">Mitsubishi Pajero Sport 4X4</option>
+                <option value="Hyundai Verna CRDi 1.6 AT SX Plus">Hyundai Verna CRDi 1.6 AT SX Plus</option>
+                <option value="Audi Q3 35 TDI Quattro Premium Plus">Audi Q3 35 TDI Quattro Premium Plus</option>
+                <option value="Toyota Etios Cross 1.2L G">Toyota Etios Cross 1.2L G</option>
+                <option value="Maruti Baleno Delta CVT">Maruti Baleno Delta CVT</option>
+                <option value="Hyundai Grand i10 1.2 Kappa Sportz">Hyundai Grand i10 1.2 Kappa Sportz</option>
+                <option value="Jaguar XE Portfolio">Jaguar XE Portfolio</option>
+                <option value="Hyundai i20 Active SX Diesel">Hyundai i20 Active SX Diesel</option>
+                <option value="Honda BR-V i-DTEC S MT">Honda BR-V i-DTEC S MT</option>
+                <option value="Maruti Ignis 1.2 Delta">Maruti Ignis 1.2 Delta</option>
+                <option value="Mahindra Verito 1.5 D4 BSIV">Mahindra Verito 1.5 D4 BSIV</option>
+                <option value="Maruti Alto K10 LXI">Maruti Alto K10 LXI</option>
+                <option value="Toyota Innova Crysta 2.4 ZX MT">Toyota Innova Crysta 2.4 ZX MT</option>
+                <option value="Mahindra Verito Vibe 1.5 dCi D6">Mahindra Verito Vibe 1.5 dCi D6</option>
+                <option value="Maruti Eeco 5 Seater AC">Maruti Eeco 5 Seater AC</option>
+                <option value="Toyota Corolla Altis 1.8 G">Toyota Corolla Altis 1.8 G</option>
+                <option value="Hyundai Elite i20 Asta Option">Hyundai Elite i20 Asta Option</option>
+                <option value="Bentley Flying Spur W12">Bentley Flying Spur W12</option>
+                <option value="Toyota Fortuner 2.8 2WD MT">Toyota Fortuner 2.8 2WD MT</option>
+                <option value="Nissan Micra Active XV">Nissan Micra Active XV</option>
+                <option value="Tata Tiago 1.2 Revotron XZ">Tata Tiago 1.2 Revotron XZ</option>
+                <option value="Audi A4 35 TDI Technology">Audi A4 35 TDI Technology</option>
+                <option value="Maruti Vitara Brezza LDi">Maruti Vitara Brezza LDi</option>
+                <option value="Maruti Swift VDI">Maruti Swift VDI</option>
+                <option value="Hyundai Tucson 2.0 e-VGT 4WD AT GLS">Hyundai Tucson 2.0 e-VGT 4WD AT GLS</option>
+                <option value="Maruti Baleno Delta">Maruti Baleno Delta</option>
+                <option value="Maruti Dzire AMT ZXI Plus">Maruti Dzire AMT ZXI Plus</option>
+                <option value="Maruti Wagon R VXI AMT Opt">Maruti Wagon R VXI AMT Opt</option>
+                <option value="Nissan Terrano XV D Pre">Nissan Terrano XV D Pre</option>
+                <option value="Hyundai Verna CRDi 1.6 SX Option">Hyundai Verna CRDi 1.6 SX Option</option>
+                <option value="Nissan Micra XV CVT">Nissan Micra XV CVT</option>
+                <option value="Maruti Vitara Brezza ZDi Plus Dual Tone">Maruti Vitara Brezza ZDi Plus Dual Tone</option>
+                <option value="Mercedes-Benz GLC 220d 4MATIC Sport">Mercedes-Benz GLC 220d 4MATIC Sport</option>
+                <option value="Mitsubishi Pajero Sport 4X2 AT">Mitsubishi Pajero Sport 4X2 AT</option>
+                <option value="Renault KWID Climber 1.0 AMT">Renault KWID Climber 1.0 AMT</option>
+                <option value="Hyundai Creta 1.6 SX Diesel">Hyundai Creta 1.6 SX Diesel</option>
+                <option value="Mini Cooper 3 DOOR D">Mini Cooper 3 DOOR D</option>
+                <option value="Mercedes-Benz B Class B180 Sport">Mercedes-Benz B Class B180 Sport</option>
+                <option value="Mahindra Bolero SLX">Mahindra Bolero SLX</option>
+                <option value="Hyundai Xcent 1.2 CRDi SX">Hyundai Xcent 1.2 CRDi SX</option>
+                <option value="BMW 5 Series 530i Sport Line">BMW 5 Series 530i Sport Line</option>
+                <option value="Maruti Wagon R VXI 1.2">Maruti Wagon R VXI 1.2</option>
+                <option value="Renault KWID RXL">Renault KWID RXL</option>
+                <option value="Honda Jazz VX CVT">Honda Jazz VX CVT</option>
+                <option value="Honda BRV i-VTEC V CVT">Honda BRV i-VTEC V CVT</option>
+                <option value="Mahindra KUV 100 D75 K8 5Str">Mahindra KUV 100 D75 K8 5Str</option>
+                <option value="Maruti Alto K10 VXI">Maruti Alto K10 VXI</option>
+                <option value="Maruti Dzire VXI">Maruti Dzire VXI</option>
+                <option value="Jeep Compass 2.0 Limited Option 4X4">Jeep Compass 2.0 Limited Option 4X4</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Petrol">Petrol</option>
+
+                
+                
+              </select>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="Year">Year of Purchase</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="Year" name="Year" placeholder="Year of Purchase">
+        </div>
+      </div><div class="row">
+        <div class="col-25">
+          <label for="Kilometer_Driven">Total kilometer driven by car</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="Kilometer_Driven" name="Kilometer_Driven" placeholder="Total kilometer driven by car">
+        </div>
+      </div>
+        <div class="row">
+            <div class="col-25">
+              <label for="Fuel_Type">Fuel Type</label>
+            </div>
+            <div class="col-75">
+              <select id="Fuel_Type" name="Fuel_Type">
+                <option value="CGN">CGN</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Petrol">Petrol</option>
+                
+              </select>
+      </div>
+ </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="Transmission">Transmission</label>
+        </div>
+        <div class="col-75">
+          <select id="Transmission" name="Transmission">
+            <option value="Manual">Manual</option>
+            <option value="Manual">Automatic</option>
+            
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="Owner_Type">No. of Owners</label>
+        </div>
+        <div class="col-75">
+          <select id="Owner_Type" name="Owner_Type">
+            <option value="First">First</option>
+            <option value="Second">Second</option>
+            
+            
+          </select>
+  </div>
+</div>
+      <div class="row">
+        <div class="col-25">
+          <label for="Mileage">Mileage(in kmpl)</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="Mileage" name="Mileage" placeholder="Mileage">
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Engine">Engine (in cc)</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="Engine" name="lastname" placeholder="Engine">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="Power">Power(in bhp)</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="Power" name="Power" placeholder="Power">
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="Seats">NO. of seats</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="Seats" name="Seats" placeholder="NO. of seats">
+        </div>
+      </div>
+    
+    
+    <br>
+    <div class="row">
+    <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+</body>
+</html>

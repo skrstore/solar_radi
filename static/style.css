@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container1{
+    height: 100vh;
+	width: 100%;
+	background-image: url(media/e.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+
+
+}
+.container3{
+	font-style: none;
+	color: black;
+}
