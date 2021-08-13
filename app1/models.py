@@ -159,7 +159,7 @@ choice3 = (("Manual", "Manual"), ("Automatic", "Automatic"))
 choice4 = (("First", "First"), ("Second", "Second"))
 
 
-class prediction1(models.Model):
+class PredictionData(models.Model):
     Name = models.CharField(max_length=128, choices=choice1)
     Year = models.FloatField(max_length=128)
     Kilometers_Driven = models.FloatField(max_length=128)

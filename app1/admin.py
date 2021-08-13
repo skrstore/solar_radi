@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-#sign up
-from .models import *
+# sign up
+from app1.models import PredictionData
 
 
-admin.site.register(prediction1)
+admin.site.register(PredictionData)

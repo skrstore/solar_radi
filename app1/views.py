@@ -10,7 +10,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
-# from .models import *
+from app1.models import PredictionData
 
 
 # Create your views here.
@@ -94,6 +94,7 @@ def predication1(request):
         y = a[["New_Price"]]
 
         x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.4)
+        print("X ", x_train)
 
         rf = RandomForestRegressor()
         rf.fit(x_train, y_train)
@@ -101,19 +102,20 @@ def predication1(request):
         predi = np.array(
             [
                 [
-                    Name,
-                    Year,
-                    Kilometer_Driven,
-                    Fuel_Type,
-                    Transmission,
-                    Owner_Type,
-                    Mileage,
-                    Engine,
-                    Power,
-                    Seats,
+                    int(Year),  # 2013
+                    int(Kilometer_Driven),  # 123456
+                    float(Mileage),  # 23.33
+                    int(Engine),  # 1582
+                    float(Power),  # 126.33
+                    int(Seats),  # 5
+                    100,  # Name, # TODO
+                    1,  # Fuel_Type, # TODO
+                    2,  # Transmission, # TODO
+                    1,  # Owner_Type, # TODO
                 ]
             ]
         )
+
         print(predi)
         pred = rf.predict(predi)
         target = pred[0]
@@ -131,20 +133,21 @@ def predication1(request):
             Seats,
         )
 
-        hp = predication1(
-            Name,
-            Year,
-            Kilometer_Driven,
-            Fuel_Type,
-            Transmission,
-            Owner_Type,
-            Mileage,
-            Engine,
-            Power,
-            Seats,
+        hp = PredictionData(
+            Name=Name,
+            Year=int(Year),
+            Kilometers_Driven=int(Kilometer_Driven),
+            Fuel_Type=Fuel_Type,
+            Transmission=Transmission,
+            Owner_Type=Owner_Type,
+            Mileage=float(Mileage),
+            Engine=int(Engine),
+            Power=int(Power),
+            Seats=int(Seats),
         )
         hp.save()
-        print(target)
+        print("Target : ", target)
+        print("HP", hp)
         if target == 0:
             return render(request, "about.html")
         else:
