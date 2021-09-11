@@ -1,4 +1,4 @@
-# solar_radi - Anshu Project
+# solar_radi
 
 ## Setup
 
